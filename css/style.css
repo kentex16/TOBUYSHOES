@@ -3,6 +3,81 @@
 
 :root {
     --primary : #59e01b;
-    --secondary : #2a2f40;
-    --white : #fff;
+    --secondary :#2a2f40;
+    --white:#fff;
+}
+
+.card{
+    display: flex;
+    align-items: center;
+    font-family: "muli";
+}
+.left{
+    content: "";
+    height: 395px;
+    width: 330px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--primary);
+    margin-left: 93px;
+    border-radius: 0% 50% 50% 0;
+    position: absolute;
+    z-index: 2;
+
+    & img{
+        position: absolute;
+        margin-left: -50px;
+        margin-top: -50px;
+        width: 420px;
+        transform: rotate(25deg);
+        opacity: 0;
+        transition: opacity .8s ease;
+    &.active{
+        opacity: 1;
+    }
+    }
+}
+.right{
+    content: "";
+    height: 395px;
+    width: 550px;
+    background-color: var(--secondary);
+    margin-left: 200px;
+}
+.status{
+    position: absolute;
+    margin-left: 245px;
+    height: 394px;
+    width: 305px;
+
+    & .product-name{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 21px 0 0;
+
+    & h1{
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 22px;
+    }
+    & .action {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        gap:12px;
+    }
+        & i {
+            transition: 0.3s all ease;
+        }
+        & i:hover{
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+    }
+}
+ul{
+    
 }
