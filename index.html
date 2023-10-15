@@ -1,37 +1,79 @@
-<link rel="stylesheet" href="css/style.css  ">
-<div class="card">
-    <div class="left">
-        <img src="images/shoes.png" class="cremson active" alt="mylisttobuy">
-        <img src="images/shoes1.png" class="cremson 2" alt="mylisttobuy">
-        <img src="images/shoes2.png" class="cremson 3" alt="mylisttobuy">
-        <img src="images/shoes3.png" class="cremson 4" alt="mylisttobuy">
-        <img src="images/shoes4.png" class="cremson 4" alt="mylisttobuy">
-        <img src="images/shoes5.png" class="cremson 4" alt="mylisttobuy">
-        <img src="images/shoes6.png" class="cremson 4" alt="mylisttobuy">
-        <img src="images/shoes7.png" class="cremson 8" alt="mylisttobuy">
-        <img src="images/shoes8.png" class="cremson 9" alt="mylisttobuy">
-        <img src="images/shoes9.png" class="cremson 10" alt="mylisttobuy">
-        <img src="images/shoes10.png" class="cremson 11" alt="mylisttobuy">
-        <img src="images/shoes11.png" class="cremson 12" alt="mylisttobuy">
-    </div>
-    <div class="right">
-        <div class="status">
-            <div class="product-name">
-                <h1>Air Jordan</h1>
-                <div class="action">
-                    <i class="fa fa-search"></i>
+<!DOCTYPE html>
+<html>
+<head>
+    <title> My Personal COllection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <html lang="en">
+    <link rel="stylesheet" href="css/style.css">    
+</head>
+<body>
+    <div class="card">
+        <div class="left">
+            <div class="image-container"></div>
+            <img src="images/shoes.png" class="cremson active" data-color="cremson" alt="mylisttobuy">
+            <img src="images/shoes1.png" class="cremson" data-color="blue" alt="mylisttobuy">
+            <img src="images/shoes2.png" class="cremson" data-color="black" alt="mylisttobuy">
+            <img src="images/shoes3.png" class="cremson" data-color="redwhiteblack" alt="mylisttobuy">
+            <img src="images/shoes4.png" class="cremson" data-color="redwhite" alt="mylisttobuy">
+            <img src="images/shoes5.png" class="cremson" data-color="darkgreen" alt="mylisttobuy">
+            <img src="images/shoes6.png" class="cremson" data-color="violet" alt="mylisttobuy">
+            <img src="images/shoes7.png" class="cremson" data-color="lightgreen" alt="mylisttobuy">
+            <img src="images/shoes8.png" class="cremson" data-color="salmon" alt="mylisttobuy">
+            <img src="images/shoes9.png" class="cremson" data-color ="grey" alt="mylisttobuy">
+            <img src="images/shoes10.png" class="cremson" data-color="redblack" alt="mylisttobuy">
+        </div>
+        <div class="right">
+            <div class="status">
+                <div class="product-name">
+                    <h1>Air Jordan</h1>
+                    <ul id="color">
+                        <li>COLOR</li>
+                        <li class="color active" data-color="cremson " style="--color: #808080"></li>
+                        <li class="color" data-color="blue" style="--color: #02a2ca"></li>
+                        <li class="color" data-color="black" style="--color: #000000"></li>
+                        <li class="color" data-color="redwhiteblack" style="--color: #FF0000"></li>
+                        <li class="color" data-color="redwhite" style="--color: #FF0000"></li>
+                        <li class="color" data-color="darkgreen" style="--color: #008000"></li>
+                        <li class="color" data-color="violet" style="--color: #9B26B6"></li>
+                        <li class="color" data-color="lightgreen" style="--color: #008000"></li>
+                        <li class="color" data-color="salmon" style="--color: #FA8072"></li>
+                        <li class="color" data-color="grey" style="--color: #828282"></li>
+                        <li class="color" data-color="redblack" style="--color: #FF0000"></li>
+                    </ul>
+                </div>  
                 </div>
-             <ul id="color">
-                <li>COLOR</li>
-                <li class="color active" data-color="cremson" style="--color: #02a2ca"></li>
-                <li class="color active" data-color="cremson" style="--color: #02a2ca"></li>
-                <li class="color active" data-color="cremson" style="--color: #02a2ca"></li>
-                <li class="color active" data-color="cremson" style="--color: #02a2ca"></li>
-             </ul>
-             <span class="footer">
-                <button class="button">COLLECTED</button>
-             </span>
             </div>
         </div>
     </div>
-</div>
+
+    <script>
+  
+        const colorOptions = document.querySelectorAll("#color .color");
+        const images = document.querySelectorAll('.cremson');
+        
+
+   colorOptions.forEach((colorOption) => {
+            colorOption.addEventListener("click", () => {
+                const selectedColor = colorOption.getAttribute("data-color");
+    
+                images.forEach((image) => {
+                    image.classList.remove("active");
+                });
+    
+         
+                images.forEach((image) => {
+                    if (image.getAttribute("data-color") === selectedColor) {
+                        image.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        
+    </script>
+    
+</body>
+</html>
